@@ -1,0 +1,27 @@
+{# templates/countries/sortable_table.html.twig #}
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.5/css/jquery.dataTables.css" />
+<table id="countries" class="sortable asc">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Population</th>
+      <th>Region</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for country in countries %}
+    <tr>
+      <td>{{country.name}}</td>
+      <td>{{country.population}}</td>
+      <td>{{country.region}}</td>
+    {% endfor %}
+    </tr>
+  </tbody>
+</table>
+<script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+
+<script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.js"></script>
+<script> $(document).ready( function () {
+    $('#countries').DataTable();
+} );
+</script>

@@ -1,0 +1,11 @@
+{# templates/countries/layout.html.twig #}
+{% extends 'base.html.twig' %}
+{% block content %}
+    <a href="/"> Show all countries</a>
+    <br>
+    <a href="/lith"> Show countries smaller than Lithuania</a>
+    <br>
+    <a href="/europe"> Show countries that are in Europe</a>
+    {{ include('countries/data_table.html.twig', {countries: countries}) }}
+
+{% endblock %}

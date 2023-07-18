@@ -1,0 +1,16 @@
+{# templates/countries/table.html.twig #}
+
+<table class="table table-striped">
+  <tr>
+    <th>Name</th>
+    <th>Population</th>
+    <th>Region</th>
+  </tr>
+  {% for country in countries %}
+  <tr>
+    <td>{{country.name}}</td>
+    <td>{{country.population}}</td>
+    <td>{{country.region}}</td>
+  {% endfor %}
+  </tr>
+</table>
