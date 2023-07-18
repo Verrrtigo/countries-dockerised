@@ -16,6 +16,6 @@ Built utilising https://github.com/ger86/symfony-docker to set up boilerplate fo
 The default/home route (`/`) will show a list of all countries. The table is sortable by clicking on the header to sort by, toggling between ascending and descending. There is also a possibility to search the table.
 
 There are three links to get a differently filtered table
--list all countries
--list all countries with a population smaller than Lithuania
--list all countries that are in Europe
+- list all countries
+- list all countries with a population smaller than Lithuania
+- list all countries that are in Europe
