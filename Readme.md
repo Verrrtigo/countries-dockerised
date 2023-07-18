@@ -1,39 +1,21 @@
-# 🐳 Docker + PHP 8.2 + MySQL + Nginx + Symfony 6.2 Boilerplate
-
 ## Description
-
-This is a complete stack for running Symfony 6.2 into Docker containers using docker-compose tool.
-
-It is composed by 4 containers:
-
-- `nginx`, acting as the webserver.
-- `php`, the PHP-FPM container with the 8.2 version of PHP.
-- `db` which is the MySQL database container with a **MySQL 8.0** image.
+Built utilising https://github.com/ger86/symfony-docker to set up boilerplate for nginx, php and symfony
 
 ## Installation
 
-1. 😀 Clone this repo.
+1. Clone the repository. And open the repository folder in a terminal.
 
-2. If you are working with Docker Desktop for Mac, ensure **you have enabled `VirtioFS` for your sharing implementation**. `VirtioFS` brings improved I/O performance for operations on bind mounts. Enabling VirtioFS will automatically enable Virtualization framework.
+2. Open `./docker` directory in a terminal and run `docker compose up -d` to start containers.
 
-3. Create the file `./.docker/.env.nginx.local` using `./.docker/.env.nginx` as template. The value of the variable `NGINX_BACKEND_DOMAIN` is the `server_name` used in NGINX.
-
-4. Go inside folder `./docker` and run `docker compose up -d` to start containers.
-
-5. You should work inside the `php` container. This project is configured to work with [Remote Container](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) extension for Visual Studio Code, so you could run `Reopen in container` command after open the project.
+3. Once the containers are started, the app should be accessible on `localhost:80`
 
 6. Inside the `php` container, run `composer install` to install dependencies from `/var/www/symfony` folder.
 
-7. Use the following value for the DATABASE_URL environment variable:
+## To use the app
 
-```
-DATABASE_URL=mysql://app_user:helloworld@db:3306/app_db?serverVersion=8.0.33
-```
+The default/home route (`/`) will show a list of all countries. The table is sortable by clicking on the header to sort by, toggling between ascending and descending. There is also a possibility to search the table.
 
-You could change the name, user and password of the database in the `env` file at the root of the project.
-
-## To learn more
-
-I have recorded a Youtube session explaining the different parts of this project. You could see it here:
-
-[Boilerplate para Symfony basado en Docker, NGINX y PHP8](https://youtu.be/A82-hry3Zvw)
+There are three links to get a differently filtered table
+-list all countries
+-list all countries with a population smaller than Lithuania
+-list all countries that are in Europe
